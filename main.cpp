@@ -250,29 +250,17 @@ void Push() //Позволяет добавить студента в группу, проверяя при этом группу на 
 	Group* p = SearchGroupAuto();
 	ListOfStudents(p);
 	short int beta = 1;
+	cout << endl;
 	while (beta)
 	{
-		Student* tmp;
-		p->count++;
-		if (p->last)
-		{
-			tmp = new Student;
-			tmp->prev = p->last;
-			p->last->next = tmp;
-			p->last = tmp;
-		}
-		else
-		{
-			p->last = new Student;
-			p->last->prev = NULL;
-		}
-		p->last->next = NULL;
-		cout << endl << "Enter name of student" << endl;
+		bool alpha = true;
+		Student* tmp = new Student;
+		cout << "Enter name of student" << endl;
 		cin.clear();
 		cin.ignore();
-		getline(cin, p->last->name, '\n');
+		getline(cin, tmp->name, '\n');
 		cout << "Enter student ID" << endl;
-		cin >> p->last->number;
+		cin >> tmp->number;
 		while (!cin)
 		{
 			cin.clear();
@@ -281,53 +269,84 @@ void Push() //Позволяет добавить студента в группу, проверяя при этом группу на 
 			cin >> p->last->number;
 		}
 		cout << "Enter date of birth" << endl;
-		cin >> p->last->dateofbirth;
+		cin >> tmp->dateofbirth;
 		cout << "Enter phone number" << endl;
-		cin >> p->last->phone;
+		cin >> tmp->phone;
 		cout << "Enter student grades (" << AMOUNTofGRADES << ")" << endl;
 		for (int i = 0; i < AMOUNTofGRADES; i++)
 		{
-			cin >> p->last->grade[i];
-			while (!cin || p->last->grade[i] < 2 || p->last->grade[i]>5)
+			cin >> tmp->grade[i];
+			while (!cin || tmp->grade[i] < 2 || tmp->grade[i]>5)
 			{
 				cin.clear();
 				cin.ignore(100, '\n');
 				cout << "Error! Retype! " << endl;
-				cin >> p->last->grade[i];;
+				cin >> tmp->grade[i];;
 			}
 		}
-		if (!p->stud)
-			p->stud = p->last;
-		if (p->count > 1)
+		Student* trash = p->stud;
+		while (trash)
 		{
-			Student* key, *run, *swap = NULL;
-			string temp;
-			key = p->last;
-			temp = key->name;
-			run = p->stud;
-			while (temp > run->name && run->next != 0)
-				run = run->next;
-			if (run != key)
-				swap = run;
-			if (swap)
+			if (tmp->number == trash->number)
 			{
-				p->last = p->last->prev;
-				p->last->next = NULL;
-				Student* tnext = NULL, *tprev = NULL;
-				if (swap != p->stud)
-				{
-					Student* t = swap->prev;
-					t->next = key;
-					key->prev = t;
-				}
-				else
-				{
-					key->prev = NULL;
-					p->stud = key;
-				}
-				key->next = swap;
-				swap->prev = key;
+				alpha = false;
+				break;
 			}
+			trash = trash->next;
+		}
+		if (alpha)
+		{
+			p->count++;
+			if (p->last)
+			{
+				tmp->prev = p->last;
+				p->last->next = tmp;
+				p->last = tmp;
+			}
+			else
+			{
+				p->last = tmp;
+				p->last->prev = NULL;
+			}
+			p->last->next = NULL;
+			if (!p->stud)
+				p->stud = p->last;
+			if (p->count > 1)
+			{
+				Student* key, *run, *swap = NULL;
+				string temp;
+				key = p->last;
+				temp = key->name;
+				run = p->stud;
+				while (temp > run->name && run->next != 0)
+					run = run->next;
+				if (run != key)
+					swap = run;
+				if (swap)
+				{
+					p->last = p->last->prev;
+					p->last->next = NULL;
+					Student* tnext = NULL, *tprev = NULL;
+					if (swap != p->stud)
+					{
+						Student* t = swap->prev;
+						t->next = key;
+						key->prev = t;
+					}
+					else
+					{
+						key->prev = NULL;
+						p->stud = key;
+					}
+					key->next = swap;
+					swap->prev = key;
+				}
+			}
+		}
+		else
+		{
+			cout << "Error! Student with this student ID is already added!\n";
+			_getch();
 		}
 		system("cls");
 		cout << "Add one more student? Y-1/N-0\n";
