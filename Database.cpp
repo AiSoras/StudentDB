@@ -1,6 +1,6 @@
 #include "Lib.h"
 
-void SaveDB() //Сохраняет всю базу данных в файл с именем, равному текущей дате
+void SaveDB() //Г‘Г®ГµГ°Г Г­ГїГҐГІ ГўГ±Гѕ ГЎГ Г§Гі Г¤Г Г­Г­Г»Гµ Гў ГґГ Г©Г« Г± ГЁГ¬ГҐГ­ГҐГ¬, Г°Г ГўГ­Г®Г¬Гі ГІГҐГЄГіГ№ГҐГ© Г¤Г ГІГҐ
 {
 	std::string date, time, type;
 	Group* p = start;
@@ -69,7 +69,7 @@ void LoadDBMenu()
 		switch (menu)
 		{
 		case 1:
-			file = FindFirstFile("./*.txt", &f);
+			file = FindFirstFile("./DB*.txt", &f);
 			if (file != INVALID_HANDLE_VALUE)
 			{
 				std::cout << "____Files____" << std::endl;
@@ -87,7 +87,7 @@ void LoadDBMenu()
 			}
 			break;
 		case 2:
-			file = FindFirstFile("./*.bin", &f);
+			file = FindFirstFile("./DB*.bin", &f);
 			if (file != INVALID_HANDLE_VALUE)
 			{
 				std::cout << "____Files____" << std::endl;
