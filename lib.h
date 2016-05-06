@@ -17,10 +17,10 @@
 #include "Database.h"
 extern char point[];
 extern int amount, N, fmenu, smenu, stop, gmenu, stmenu, dbmenu, filemenu;
-extern COORD m; //Положение меню
-extern COORD c; //Положение стрелки
+extern COORD m; //ГЏГ®Г«Г®Г¦ГҐГ­ГЁГҐ Г¬ГҐГ­Гѕ
+extern COORD c; //ГЏГ®Г«Г®Г¦ГҐГ­ГЁГҐ Г±ГІГ°ГҐГ«ГЄГЁ
 extern HANDLE h;
-extern Group* start; //Начало всего потока
-extern Group* finish; //Конец потока
-extern Group* fordel; //Группа, где необходимо удалить студента
+extern Group* start; //ГЌГ Г·Г Г«Г® ГўГ±ГҐГЈГ® ГЇГ®ГІГ®ГЄГ 
+extern Group* finish; //ГЉГ®Г­ГҐГ¶ ГЇГ®ГІГ®ГЄГ 
+extern Group* fordel; //ГѓГ°ГіГЇГЇГ , ГЈГ¤ГҐ Г­ГҐГ®ГЎГµГ®Г¤ГЁГ¬Г® ГіГ¤Г Г«ГЁГІГј Г±ГІГіГ¤ГҐГ­ГІГ 
 #endif
