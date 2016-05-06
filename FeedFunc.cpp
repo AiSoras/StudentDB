@@ -1,6 +1,6 @@
 #include "Lib.h"
 
-void ShowAllGroups() //Показывает номера всех созданных групп, где в скобках указано количество студентов в группе. Также указано общее число студентов в потоке
+void ShowAllGroups() //ГЏГ®ГЄГ Г§Г»ГўГ ГҐГІ Г­Г®Г¬ГҐГ°Г  ГўГ±ГҐГµ Г±Г®Г§Г¤Г Г­Г­Г»Гµ ГЈГ°ГіГЇГЇ, ГЈГ¤ГҐ Гў Г±ГЄГ®ГЎГЄГ Гµ ГіГЄГ Г§Г Г­Г® ГЄГ®Г«ГЁГ·ГҐГ±ГІГўГ® Г±ГІГіГ¤ГҐГ­ГІГ®Гў Гў ГЈГ°ГіГЇГЇГҐ. Г’Г ГЄГ¦ГҐ ГіГЄГ Г§Г Г­Г® Г®ГЎГ№ГҐГҐ Г·ГЁГ±Г«Г® Г±ГІГіГ¤ГҐГ­ГІГ®Гў Гў ГЇГ®ГІГ®ГЄГҐ
 {
 	if (start)
 	{
@@ -21,7 +21,7 @@ void ShowAllGroups() //Показывает номера всех созданных групп, где в скобках ука
 	_getch();
 	system("cls");
 };
-double AverageGrade() //Вычисляет среднее арифметическое потока
+double AverageGrade() //Г‚Г»Г·ГЁГ±Г«ГїГҐГІ Г±Г°ГҐГ¤Г­ГҐГҐ Г Г°ГЁГґГ¬ГҐГІГЁГ·ГҐГ±ГЄГ®ГҐ ГЇГ®ГІГ®ГЄГ 
 {
 	double aver = 0;
 	if (start)
@@ -50,7 +50,7 @@ double AverageGrade() //Вычисляет среднее арифметическое потока
 				type += time;
 				std::string fdate = type + ".txt";
 				std::ofstream fout(fdate.c_str());
-				fout << "THe average grade of feed: ";
+				fout << "The average grade of feed: ";
 				fout << "\n" << aver;
 				fout.close();
 				std::cout << "Success! The file is created! Name is " << type << ".\n";
@@ -61,7 +61,7 @@ double AverageGrade() //Вычисляет среднее арифметическое потока
 		std::cout << "Error! Database is empty!" << std::endl;
 	return aver;
 };
-void ExcellentPupil() //Выводит отличников всего потока
+void ExcellentPupil() //Г‚Г»ГўГ®Г¤ГЁГІ Г®ГІГ«ГЁГ·Г­ГЁГЄГ®Гў ГўГ±ГҐГЈГ® ГЇГ®ГІГ®ГЄГ 
 {
 	if (start)
 	{
