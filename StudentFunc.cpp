@@ -1,7 +1,7 @@
-#include "Lib.h"
+#include "lib.h"
 
-bool Grades(Student* tmp, int G) //Проверка, что у студента все оценки равны определенному значению (2/5), возвращает false, если нет, true - да
-{                       // Отдельня функция, т.к. для большого количества оценок округление среднего значения может привести к неточности
+bool Grades(Student* tmp, int G) //ГЏГ°Г®ГўГҐГ°ГЄГ , Г·ГІГ® Гі Г±ГІГіГ¤ГҐГ­ГІГ  ГўГ±ГҐ Г®Г¶ГҐГ­ГЄГЁ Г°Г ГўГ­Г» Г®ГЇГ°ГҐГ¤ГҐГ«ГҐГ­Г­Г®Г¬Гі Г§Г­Г Г·ГҐГ­ГЁГѕ (2/5), ГўГ®Г§ГўГ°Г Г№Г ГҐГІ false, ГҐГ±Г«ГЁ Г­ГҐГІ, true - Г¤Г 
+{                       // ГЋГІГ¤ГҐГ«ГјГ­Гї ГґГіГ­ГЄГ¶ГЁГї, ГІ.ГЄ. Г¤Г«Гї ГЎГ®Г«ГјГёГ®ГЈГ® ГЄГ®Г«ГЁГ·ГҐГ±ГІГўГ  Г®Г¶ГҐГ­Г®ГЄ Г®ГЄГ°ГіГЈГ«ГҐГ­ГЁГҐ Г±Г°ГҐГ¤Г­ГҐГЈГ® Г§Г­Г Г·ГҐГ­ГЁГї Г¬Г®Г¦ГҐГІ ГЇГ°ГЁГўГҐГ±ГІГЁ ГЄ Г­ГҐГІГ®Г·Г­Г®Г±ГІГЁ
 	bool alpha = true;
 	for (int i = 0; i < AMOUNTofGRADES; i++)
 		if (tmp->grade[i] != G)
@@ -11,14 +11,14 @@ bool Grades(Student* tmp, int G) //Проверка, что у студента все оценки равны опр
 		}
 	return alpha;
 };
-bool AverageGrade(Student* tmp, double G) //Проверяет, что у студента его среднее арифметическое всех оценок больше какого-либо числа. Если не так, то возвращает false
+bool AverageGrade(Student* tmp, double G) //ГЏГ°Г®ГўГҐГ°ГїГҐГІ, Г·ГІГ® Гі Г±ГІГіГ¤ГҐГ­ГІГ  ГҐГЈГ® Г±Г°ГҐГ¤Г­ГҐГҐ Г Г°ГЁГґГ¬ГҐГІГЁГ·ГҐГ±ГЄГ®ГҐ ГўГ±ГҐГµ Г®Г¶ГҐГ­Г®ГЄ ГЎГ®Г«ГјГёГҐ ГЄГ ГЄГ®ГЈГ®-Г«ГЁГЎГ® Г·ГЁГ±Г«Г . Г…Г±Г«ГЁ Г­ГҐ ГІГ ГЄ, ГІГ® ГўГ®Г§ГўГ°Г Г№Г ГҐГІ false
 {
 	bool alpha = true;
 	if (tmp->averg <= G)
 		alpha = false;
 	return alpha;
 };
-Student* CreateStudentAuto(Group* &p, std::istream &fin) //Аналагично с CreateGroupAuto
+Student* CreateStudentAuto(Group* &p, std::istream &fin) //ГЂГ­Г Г«Г ГЈГЁГ·Г­Г® Г± CreateGroupAuto
 {
 	Student* tmp = NULL;
 	if (p->last)
@@ -58,7 +58,7 @@ Student* CreateStudentAuto(Group* &p, std::istream &fin) //Аналагично с CreateGr
 		p->stud = tmp = p->last;
 	return tmp;
 };
-void AddStudent() //Позволяет добавить студента в группу, проверяя при этом группу на существование
+void AddStudent() //ГЏГ®Г§ГўГ®Г«ГїГҐГІ Г¤Г®ГЎГ ГўГЁГІГј Г±ГІГіГ¤ГҐГ­ГІГ  Гў ГЈГ°ГіГЇГЇГі, ГЇГ°Г®ГўГҐГ°ГїГї ГЇГ°ГЁ ГЅГІГ®Г¬ ГЈГ°ГіГЇГЇГі Г­Г  Г±ГіГ№ГҐГ±ГІГўГ®ГўГ Г­ГЁГҐ
 {
 	Group* p = SearchGroupAuto();
 	ListOfStudents(p);
@@ -184,7 +184,7 @@ void AddStudent() //Позволяет добавить студента в группу, проверяя при этом груп
 	}
 	system("cls");
 };
-void DeleteStudent() //Удаляет студента, если он существует
+void DeleteStudent() //Г“Г¤Г Г«ГїГҐГІ Г±ГІГіГ¤ГҐГ­ГІГ , ГҐГ±Г«ГЁ Г®Г­ Г±ГіГ№ГҐГ±ГІГўГіГҐГІ
 {
 	Student* tmp = NULL;
 	while (!tmp)
@@ -218,7 +218,7 @@ void DeleteStudent() //Удаляет студента, если он существует
 	_getch();
 	system("cls");
 };
-void PrintStudent() //Выводит все поля определенного студента
+void PrintStudent() //Г‚Г»ГўГ®Г¤ГЁГІ ГўГ±ГҐ ГЇГ®Г«Гї Г®ГЇГ°ГҐГ¤ГҐГ«ГҐГ­Г­Г®ГЈГ® Г±ГІГіГ¤ГҐГ­ГІГ 
 {
 	Student* tmp = NULL;
 	Group* p;
@@ -237,7 +237,7 @@ void PrintStudent() //Выводит все поля определенного студента
 	_getch();
 	system("cls");
 };
-void Losers() //Выводит двоечников в группе
+void Losers() //Г‚Г»ГўГ®Г¤ГЁГІ Г¤ГўГ®ГҐГ·Г­ГЁГЄГ®Гў Гў ГЈГ°ГіГЇГЇГҐ
 {
 	Group* p = SearchGroupAuto();
 	Student* tmp = p->stud;
@@ -271,7 +271,7 @@ void Losers() //Выводит двоечников в группе
 	_getch();
 	system("cls");
 };
-void ExcellentPupilOfGroup() //Выводит отличников в группе
+void ExcellentPupilOfGroup() //Г‚Г»ГўГ®Г¤ГЁГІ Г®ГІГ«ГЁГ·Г­ГЁГЄГ®Гў Гў ГЈГ°ГіГЇГЇГҐ
 {
 	Group* p = SearchGroupAuto();
 	Student* tmp = p->stud;
@@ -305,7 +305,7 @@ void ExcellentPupilOfGroup() //Выводит отличников в группе
 	_getch();
 	system("cls");
 };
-void HigherThanTheAverageGrade() //Выводит студентов, у которых средних балл выше среднего балла потока
+void HigherThanTheAverageGrade() //Г‚Г»ГўГ®Г¤ГЁГІ Г±ГІГіГ¤ГҐГ­ГІГ®Гў, Гі ГЄГ®ГІГ®Г°Г»Гµ Г±Г°ГҐГ¤Г­ГЁГµ ГЎГ Г«Г« ГўГ»ГёГҐ Г±Г°ГҐГ¤Г­ГҐГЈГ® ГЎГ Г«Г«Г  ГЇГ®ГІГ®ГЄГ 
 {
 	if (start)
 	{
