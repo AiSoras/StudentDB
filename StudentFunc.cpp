@@ -81,7 +81,7 @@ void AddStudent() //Ïîçâîëÿåò äîáàâèòü ñòóäåíòà â ãð
 			std::cin.clear();
 			std::cin.ignore(100, '\n');
 			std::cout << "Error! Retype!" << std::endl;
-			std::cin >> p->last->number;
+			std::cin >> tmp->number;
 		}
 		std::cout << "Enter date of birth" << std::endl;
 		std::cin >> tmp->dateofbirth;
