@@ -69,7 +69,6 @@ void AddStudent() //Ïîçâîëÿåò äîáàâèòü ñòóäåíòà â ãð
 		int sum = 0;
 		bool alpha = true;
 		Student* tmp = new Student;
-		std::cout << "Group " << p->number << std::endl;
 		std::cout << "Enter name of student" << std::endl;
 		std::cin.clear();
 		std::cin.ignore();
@@ -227,7 +226,7 @@ void PrintStudent() //Âûâîäèò âñå ïîëÿ îïðåäåëåííîãî 
 		p = SearchGroupAuto();
 		tmp = SearchStudentAuto(p);
 	}
-	std::cout << "Group " << p->number << std::endl;
+	std::cout << "____Group " << p->number << "____\n" << std::endl;
 	std::cout << "Name: " << tmp->name << std::endl << "Student ID: " << tmp->number << std::endl << "Date of birth: " << tmp->dateofbirth << std::endl << "Phone: " << tmp->phone << std::endl << "Grades: ";
 	for (int i = 0; i < AMOUNTofGRADES; i++)
 		std::cout << tmp->grade[i] << " ";
