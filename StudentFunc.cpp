@@ -85,8 +85,9 @@ void AddStudent() //Ïîçâîëÿåò äîáàâèòü ñòóäåíòà â ãð
 		std::cout << "Enter date of birth" << std::endl;
 		std::cin >> tmp->dateofbirth;
 		std::cout << "Enter phone number" << std::endl;
-		std::cin >> tmp->phone;
 		std::cin.clear();
+		std::cin.ignore();
+		std::getline(std::cin, tmp->phone, '\n');
 		std::cout << "Enter student grades (" << AMOUNTofGRADES << ")" << std::endl;
 		for (int i = 0; i < AMOUNTofGRADES; i++)
 		{
